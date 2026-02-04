@@ -1,15 +1,91 @@
-*{
-  
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
+.login-box h2 {
+  font-family: "Georgia", serif;
+  color: #4b2e2e;
 }
-button {
-  cursor: pointer;
-  background-color: violet;
+
+.login-box p {
+  color: #8b6f47;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.login-box {
+  background: #fffdf8;
+  border: 1px solid #f1e5d1;
+}
+
+.login-box button {
+  background: linear-gradient(45deg, #c9a227, #a67c00);
+}
+
+.login-box button:hover {
+  background: linear-gradient(45deg, #a67c00, #7a5c00);
+}
+.center-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* พื้นหลังร้าน */
+.home-container {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1509440159596-0249088772ff");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* กล่องข้อความ */
+.overlay {
+  background: rgba(0,0,0,0.45);
+  padding: 60px;
+  border-radius: 20px;
+  text-align: center;
   color: white;
-  padding: 10px ;
+}
+
+/* ชื่อร้าน */
+.shop-title {
+  font-size: 48px;
+  font-family: Georgia, serif;
+  margin-bottom: 15px;
+}
+
+/* คำโปรย */
+.shop-sub {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* กลุ่มปุ่ม */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* ปุ่ม */
+.main-btn {
+  padding: 12px 25px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #c9a227, #a67c00);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ปุ่ม Register */
+.outline {
+  background: transparent;
+  border: 2px solid white;
 }
