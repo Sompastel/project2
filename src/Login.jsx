@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
+import { Link } from "react-router-dom";
+import "./index.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,16 +11,16 @@ function Login() {
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("เข้าสู่ระบบสำเร็จ");
+      alert("Login สำเร็จ 🍞");
     } catch (error) {
       alert(error.message);
     }
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>Login</h2>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2 className="auth-title">🥐 Golden Crust Bakery</h2>
 
         <input
           type="email"
@@ -32,7 +34,13 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button onClick={handleLogin}>Login</button>
+        <button className="auth-btn" onClick={handleLogin}>
+          Login
+        </button>
+
+        <p className="auth-link">
+          ยังไม่มีบัญชี ? <Link to="/register">สมัครสมาชิก</Link>
+        </p>
       </div>
     </div>
   );

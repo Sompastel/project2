@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
+import { Link } from "react-router-dom";
+import "./components/index.css";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -9,16 +11,16 @@ function Register() {
   const handleRegister = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      alert("สมัครสมาชิกสำเร็จ");
+      alert("สมัครสมาชิกสำเร็จ 🎂");
     } catch (error) {
       alert(error.message);
     }
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>Register</h2>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2 className="auth-title">🍰 สมัครสมาชิก Golden Crust</h2>
 
         <input
           type="email"
@@ -32,7 +34,13 @@ function Register() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button onClick={handleRegister}>Register</button>
+        <button className="auth-btn" onClick={handleRegister}>
+          Register
+        </button>
+
+        <p className="auth-link">
+          มีบัญชีแล้ว ? <Link to="/login">เข้าสู่ระบบ</Link>
+        </p>
       </div>
     </div>
   );
